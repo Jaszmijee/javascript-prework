@@ -1,11 +1,21 @@
-function printMessage(msg){
+function printMessage(msg) {
     var div = document.createElement('div');
     div.innerHTML = msg;
     document.getElementById('messages').appendChild(div);
 }
 
-function clearMessages(){
+function printResults(msg) {
+    var div = document.createElement('div');
+    div.innerHTML = msg;
+    document.getElementById('results').appendChild(div);
+}
+
+function clearMessages() {
     document.getElementById('messages').innerHTML = '';
+}
+
+function clearResults() {
+    document.getElementById('results').innerHTML = '';
 }
 
 /**
@@ -16,16 +26,17 @@ function clearMessages(){
  * @returns {string} The name of the move corresponding to the given move ID.
  */
 function getMoveName(argMoveId) {
-    console.log('wywołano funkcję getMoveName z argumentem: ' + argMoveId);
+    console.log('getMoveName function called with argument: ' + argMoveId);
     if (argMoveId == 1) {
-        return 'kamień';
+        return 'Rock';
     } else if (argMoveId == 2) {
-        return 'papier';
+        return 'Paper';
     } else if (argMoveId == 3) {
-        return 'nożyce';
+        return 'Scissors';
+    } else if (argMoveId == 4) {
+        return 'Lizard';
     } else {
-        printMessage('Nie znam ruchu o id ' + argMoveId + '. Zakładam, że chodziło o "kamień".');
-        return 'kamień';
+        return 'Spock';
     }
 }
 
@@ -35,17 +46,33 @@ function getMoveName(argMoveId) {
  * @param {string} argPlayerMove - The move chosen by the player.
  * @param {string} argComputerMove - The move randomly chosen by the computer.
  */
-
 function displayResult(argPlayerMove, argComputerMove) {
-    console.log('wywołano funkcję displayResults z argumentami: ' + argPlayerMove + ', ' + argComputerMove);
+    console.log('displayResults function called with arguments: ' + argPlayerMove + ', ' + argComputerMove);
     if (argPlayerMove == argComputerMove) {
-        printMessage('Remis!');
-    } else if ((argPlayerMove == 'papier' && argComputerMove == 'kamień')
-        || (argPlayerMove == 'nożyce' && argComputerMove == 'papier')
-        || (argPlayerMove == 'kamień' && argComputerMove == 'nożyce')) {
-        printMessage('Wygrywasz!');
+        playerScore++;
+        printMessage('It\'s a tie!');
+    } else if (argPlayerMove == 'Rock' && (argComputerMove == 'Scissors' || argComputerMove == 'Lizard')) {
+        playerScore++;
+        printMessage('You Win!');
+    } else if (argPlayerMove == 'Scissors' && (argComputerMove == 'Paper' || argComputerMove == 'Lizard')) {
+        playerScore++;
+        printMessage('You Win!');
+    } else if (argPlayerMove == 'Paper' && (argComputerMove == 'Rock' || argComputerMove == 'Spock')) {
+        playerScore++;
+        printMessage('You Win!');
+    } else if (argPlayerMove == 'Lizard' && (argComputerMove == 'Paper' || argComputerMove == 'Spock')) {
+        playerScore++;
+        printMessage('You Win!');
+    } else if (argPlayerMove == 'Spock' && (argComputerMove == 'Rock' || argComputerMove == 'Scissors')) {
+        playerScore++;
+        printMessage('You Win!');
     } else {
-        printMessage('Przegrywasz :(');
+        computerScore++;
+        printMessage('You Lose :(');
     }
-    printMessage('Zagrałem ' + argComputerMove + ', a Ty ' + argPlayerMove);
+    printMessage('You played: ' + argPlayerMove + ' and Computer played: ' + argComputerMove);
+}
+
+function displayScore(playerScore, computerScore) {
+    printResults(playerScore + ' - ' + computerScore);
 }
