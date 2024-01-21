@@ -8,85 +8,94 @@
 </head>
 <body>
 <header class="title">
-    <h1>Do you want to play a game?</h1>
+    <div class="container">
+        <h1>Do you want to play a game?</h1>
+    </div>
 </header>
 <section class="rules">
     <div class="container">
         <h2>Rock, Paper, Scissors, Lizard, Spock rules:</h2>
         <p>by Sam Kass and Karen Bryla</p>
         <div class="wrapper">
-            <ul>
-                <li>Rock:
-                    <ul>
-                        <li>Rock crushes Lizard.</li>
-                        <li>Rock crushes Scissors.</li>
-                    </ul>
-                </li>
-                <li>Paper:
-                    <ul>
-                        <li>Paper covers Rock.</li>
-                        <li>Paper disproves Spock.</li>
-                    </ul>
-                </li>
-                <li>Scissors:
-                    <ul>
-                        <li>Scissors cuts Paper.</li>
-                        <li>Scissors decapitates Lizard.</li>
-                    </ul>
-                </li>
-                <li>Lizard:
-                    <ul>
-                        <li>Lizard poisons Spock.</li>
-                        <li>Lizard eats Paper.</li>
-                    </ul>
-                </li>
-                <li>Spock:
-                    <ul>
-                        <li>Spock smashes Scissors.</li>
-                        <li>Spock vaporizes Rock.</li>
-                    </ul>
-                </li>
-            </ul>
+            <div class="rule">
+                <h3>Rock:</h3>
+                <ul>
+                    <li>Rock crushes Lizard.</li>
+                    <li>Rock crushes Scissors.</li>
+                </ul>
+            </div>
+            <div class="rule">
+                <h3>Paper:</h3>
+                <ul>
+                    <li>Paper covers Rock.</li>
+                    <li>Paper disproves Spock.</li>
+                </ul>
+            </div>
+            <div class="rule">
+                <h3>Scissors:</h3>
+                <ul>
+                    <li>Scissors cuts Paper.</li>
+                    <li>Scissors decapitates Lizard.</li>
+                </ul>
+            </div>
+            <div class="rule">
+                <h3>Lizard:</h3>
+                <ul>
+                    <li>Lizard poisons Spock.</li>
+                    <li>Lizard eats Paper.</li>
+                </ul>
+            </div>
+            <div class="rule">
+                <h3>Spock:</h3>
+                <ul>
+                    <li>Spock smashes Scissors.</li>
+                    <li>Spock vaporizes Rock.</li>
+                </ul>
+            </div>
         </div>
     </div>
 </section>
 <section class="game">
     <div class="container">
         <h2>Choose Your next move</h2>
-        <div class="wrapper">
-            <div id="buttons">
+        <p>Clik on button below the icon</p>
+            <div class="wrapper" id="buttons">
                 <div class="card">
                     <i class="fa-solid fa-hand-back-fist"></i>
-                    <button id="button-rock">Rock</button>
+                    <button type="button" id="button-rock">Rock</button>
                 </div>
                 <div class="card">
                     <i class="fa-solid fa-hand"></i>
-                    <button id="button-paper">Paper</button>
+                    <button type="button" id="button-paper">Paper</button>
                 </div>
                 <div class="card">
                     <i class="fa-solid fa-hand-scissors"></i>
-                    <button id="button-scissors">Scissors</button>
+                    <button type="button" id="button-scissors">Scissors</button>
                 </div>
                 <div class="card">
                     <i class="fa-solid fa-hand-lizard"></i>
-                    <button id="button-lizard">Lizard</button>
+                    <button type="button" id="button-lizard">Lizard</button>
                 </div>
                 <div class="card">
                     <i class="fa-solid fa-hand-spock"></i>
-                    <button id="button-spock">Spock</button>
+                    <button type="button" id="button-spock">Spock</button>
                 </div>
             </div>
         </div>
-    </div>
 </section>
 <section class="results">
     <div class="container">
         <h2>Current result</h2>
         <div id="messages"></div>
         <h2>The score</h2>
+        <p>You - Computer</p>
         <div id="results"></div>
     </div>
 </section>
+<footer>
+    <div class="container">
+        &copy;jaszmije 2024.</div>
+</footer>
 <script src="js/functions.js"></script>
 <script src="js/script.js"></script>
 </body>

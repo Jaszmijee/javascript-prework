@@ -49,7 +49,6 @@ function getMoveName(argMoveId) {
 function displayResult(argPlayerMove, argComputerMove) {
     console.log('displayResults function called with arguments: ' + argPlayerMove + ', ' + argComputerMove);
     if (argPlayerMove == argComputerMove) {
-        playerScore++;
         printMessage('It\'s a tie!');
     } else if (argPlayerMove == 'Rock' && (argComputerMove == 'Scissors' || argComputerMove == 'Lizard')) {
         playerScore++;

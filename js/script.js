@@ -1,3 +1,6 @@
+printMessage('You played: ...' +  ' and Computer played: ...');
+printResults(0 + ' - ' + 0);
+
 var argButtonName, buttonRock, buttonPaper, buttonScissors, buttonLizard, buttonSpock;
 
 buttonRock = document.getElementById('button-rock');
