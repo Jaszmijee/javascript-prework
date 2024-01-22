@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&family=Rubik+Burned&display=swap');
 
-$enable-responsive-font-sizes: true;
 $color-one: #3498db;
 $color-two: #bdc3c7;
 
@@ -49,18 +48,13 @@ p {
   font-weight: 700;
 }
 
-.results p {
-  font-size: 32px;
-  margin: 0;
-  padding-top: 20px;
-}
-
 .wrapper {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between
 }
 
+// rules
 .rule {
   display: flex;
   flex: 0 0 20%;
@@ -91,6 +85,7 @@ p {
   border: none;
 }
 
+// game
 .card {
   display: flex;
   flex: 0 0 20%;
@@ -123,6 +118,13 @@ button {
   cursor: pointer;
 }
 
+//results
+.results p {
+  font-size: 32px;
+  margin: 0;
+  padding-top: 20px;
+}
+
 #messages, #results {
   font-family: 'Open Sans', sans-serif;
   font-size: 32px;
@@ -131,6 +133,7 @@ button {
   padding: 20px;
 }
 
+//footer
 footer {
   font-family: 'Open Sans', sans-serif;
   font-weight: 700;
@@ -139,6 +142,9 @@ footer {
 }
 
 @media (max-width: 991px) {
+  .container {
+    width: 90%;
+  }
 
   h1 {
     font-size: 64px;
@@ -152,19 +158,21 @@ footer {
     font-size: 32px;
   }
 
-  .container {
-    width: 90%; /* Adjust the width as needed for smaller screens */
+  p {
+    font-size: 40px;
   }
 
+  // rules
   .rule, .card {
     flex: 0 0 100%;
     margin: 10px 0;
   }
 
   .rules ul li {
-        font-size: 32px;
+    font-size: 32px;
   }
 
+  // game
   .card i {
     font-size: 160px;
     width: 200px;
@@ -177,10 +185,7 @@ footer {
     width: 240px;
   }
 
-  p {
-    font-size: 40px;
-  }
-
+  // results
   .results p {
     font-size: 40px;
   }
